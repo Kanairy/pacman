@@ -14,7 +14,8 @@ export default class Grid {
   getState() {
     return {
       x: this.x,
-      y: this.y
+      y: this.y,
+      placed: this.placed
     };
   }
   getPlacementStatus() {
