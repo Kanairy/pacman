@@ -45,4 +45,36 @@ describe('Pacman', () => {
     });
 
   });
+
+  describe('#step', () => {
+
+    beforeEach(() => {
+      let pacman = new Pacman();
+    });
+
+    it('should have a step command', () => {
+      expect(pacman.step()).to.not.be.undefined;
+    });
+
+    it('should return a vector with 1 as the y property when facing north', () => {
+      pacman.face('NORTH');
+      expect(pacman.step().y).to.equal(1);
+    });
+
+    it('should return a vector with -1 as the y property when facing south', () => {
+      pacman.face('SOUTH');
+      expect(pacman.step().y).to.equal(-1);
+    });
+
+    it('should return a vector with 1 as the x property when facing east', () => {
+      pacman.face('EAST');
+      expect(pacman.step().x).to.equal(1);
+    });
+
+    it('should return a vector with -1 as the x property when facing west', () => {
+      pacman.face('WEST');
+      expect(pacman.step().x).to.equal(-1);
+    });
+
+  });
 });

@@ -26,6 +26,21 @@ export default class Pacman {
     return this.direction;
   }
 
+  step() {
+    if (this.direction === 'NORTH') {
+      return {x: 0, y: 1}
+    }
+    if (this.direction === 'SOUTH') {
+      return {x: 0, y: -1}
+    }
+    if (this.direction === 'EAST') {
+      return {x: 1, y: 0}
+    }
+    if (this.direction === 'WEST') {
+      return {x: -1, y: 0}
+    }
+  }
+
   getState() {
     return {
       direction: this.direction
