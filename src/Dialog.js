@@ -49,6 +49,13 @@ export default class Dialog {
           return `PLACE Pacman first!`;
         }
         
+      case 'REPORT':
+        if (this.grid.getState().placed) {
+          return `${this.grid.getState().x},${this.grid.getState().y},${this.pacman.getState().direction}`;
+        } else {
+          return `PLACE Pacman first!`;
+        }
+
       default:
         return `Ignored invalid command ${command}.`
     }

@@ -3,12 +3,22 @@ import Dialog from '../src/Dialog.js'
 
 describe('Dialog', () => {
 
-  describe('#command PLACE', () => {
+  describe('#command', () => {
     let dialog = new Dialog();
 
     it('should have a "command" command', () => {
       expect(dialog.command()).to.not.be.undefined;
     });
+
+    it('should reject unknown commands', () => {
+      const expectedMessage = `Ignored invalid command BANANA.`;
+      expect(dialog.command('BANANA')).to.equal(expectedMessage);
+    });
+
+  });
+
+  describe('#command PLACE', () => {
+    let dialog = new Dialog();
 
     it('should accept valid PLACE command', () => {
       expect(dialog.command('PLACE', 0, 0, 'NORTH')).to.be.true;
@@ -48,6 +58,7 @@ describe('Dialog', () => {
       const expectedMessage = `Ignoring invalid MOVE command`;
       expect(dialog.command('MOVE')).to.equal(expectedMessage);
     });
+    
   });
 
   describe('#command LEFT', () => {
@@ -79,4 +90,21 @@ describe('Dialog', () => {
     });
 
   });
+
+  describe('#command REPORT', () => {
+    let dialog = new Dialog();
+
+    it('should reject a REPORT command until Pacman is PLACE d', () => {
+      const expectedMessage = `PLACE Pacman first!`;
+      expect(dialog.command('REPORT')).to.equal(expectedMessage);
+    });
+
+    it('should accept a REPORT command after Pacman has been PLACE d', () => {
+      dialog.command('PLACE', 0, 0, 'NORTH');
+      const expectedMessage = `0,0,NORTH`
+      expect(dialog.command('REPORT')).to.equal(expectedMessage);
+    });
+
+  });
+
 });
