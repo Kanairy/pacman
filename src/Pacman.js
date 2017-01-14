@@ -11,6 +11,7 @@ export default class Pacman {
   }
 
   turn(direction) {
+
     if (!this.direction) {
       return false;
     }
@@ -20,6 +21,7 @@ export default class Pacman {
     if (validDirections[validDirections.indexOf(this.direction) + offset]) {
       this.direction = validDirections[validDirections.indexOf(this.direction) + offset];
     } else {
+      // if offset is to the left, pick direction at previous index or loop back to the first element
       this.direction = (offset === -1) ? validDirections[validDirections.length -1] : validDirections[0];
     }
     
@@ -28,16 +30,16 @@ export default class Pacman {
 
   step() {
     if (this.direction === 'NORTH') {
-      return {x: 0, y: 1}
+      return {x: 0, y: 1};
     }
     if (this.direction === 'SOUTH') {
-      return {x: 0, y: -1}
+      return {x: 0, y: -1};
     }
     if (this.direction === 'EAST') {
-      return {x: 1, y: 0}
+      return {x: 1, y: 0};
     }
     if (this.direction === 'WEST') {
-      return {x: -1, y: 0}
+      return {x: -1, y: 0};
     }
   }
 
