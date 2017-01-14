@@ -49,4 +49,19 @@ describe('Dialog', () => {
       expect(dialog.command('MOVE')).to.equal(expectedMessage);
     });
   });
+
+  describe('#command LEFT', () => {
+    let dialog = new Dialog();
+
+    it('should reject a LEFT command until Pacman is PLACE d', () => {
+      const expectedMessage = `PLACE Pacman first!`;
+      expect(dialog.command('LEFT')).to.equal(expectedMessage);
+    });
+
+    it('should accept a LEFT command after Pacman has been PLACE d', () => {
+      dialog.command('PLACE', 0, 0, 'NORTH');
+      expect(dialog.command('LEFT')).to.be.true;
+    });
+
+  });
 });
