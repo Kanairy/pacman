@@ -27,26 +27,6 @@ describe('Grid', () => {
 
   });
 
-  describe('#getPlacementStatus', () => {
-    let grid = new Grid();
-
-    it('should not be true initially', () => {
-      expect(grid.getPlacementStatus()).to.be.false;
-    });
-    
-    it('should be true after a valid placement', () => {
-      grid.place(0,0);
-      expect(grid.getPlacementStatus()).to.be.true;
-    });
-        
-    it('should be false after an invalid placement', () => {
-      let grid = new Grid();
-      grid.place(6,6);
-      expect(grid.getPlacementStatus()).to.be.false;
-    });
-    
-  });
-
   describe('#getState', () => {
     let grid = new Grid();
 

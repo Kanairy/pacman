@@ -1,5 +1,6 @@
 import Grid from './Grid'
 import Pacman from './Pacman'
+import { COMMANDS } from './constants';
 
 export default class Dialog {
   constructor() {
@@ -8,16 +9,16 @@ export default class Dialog {
   }
 
   command(command, ...args) {
-    const validCommands = ['MOVE', 'PLACE', 'REPORT', 'TURN'];
-
     switch (command) {
-      case 'PLACE':
+
+      case COMMANDS.place:
         if (this.grid.place(args[0], args[1]) && this.pacman.face(args[2])) {
           return true;
         } else {
           return `Ignored invalid PLACE command.`
         }
-      case 'MOVE':
+
+      case COMMANDS.move:
         if (this.grid.getState().placed) {
           const vector = this.pacman.step();
           const newXPosition = Number(vector.x) + Number(this.grid.getState().x);
@@ -33,25 +34,28 @@ export default class Dialog {
           return `PLACE Pacman first!`;
         }
 
-      case 'LEFT':
+      case COMMANDS.left:
         if (this.grid.getState().placed) {
-          this.pacman.turn('LEFT');
+          this.pacman.turn(COMMANDS.left);
           return true;
         } else {
           return `PLACE Pacman first!`;
         }
 
-      case 'RIGHT':
+      case COMMANDS.right:
         if (this.grid.getState().placed) {
-          this.pacman.turn('RIGHT');
+          this.pacman.turn(COMMANDS.right);
           return true;
         } else {
           return `PLACE Pacman first!`;
         }
         
-      case 'REPORT':
+      case COMMANDS.report:
         if (this.grid.getState().placed) {
-          return `${this.grid.getState().x},${this.grid.getState().y},${this.pacman.getState().direction}`;
+          const xCoordinate = this.grid.getState().x;
+          const yCoordinate = this.grid.getState().y;
+          const direction = this.pacman.getState().direction;
+          return `${xCoordinate},${yCoordinate},${direction}`;
         } else {
           return `PLACE Pacman first!`;
         }
@@ -61,6 +65,5 @@ export default class Dialog {
     }
 
   }
-
 
 }

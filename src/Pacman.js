@@ -1,9 +1,9 @@
-const validDirections = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
+import { DIRECTIONS } from './constants';
 
 export default class Pacman {
 
   face(direction) {
-    if (validDirections.includes(direction)) {
+    if (DIRECTIONS.includes(direction)) {
       this.direction = direction;
       return true;
     }
@@ -18,11 +18,11 @@ export default class Pacman {
 
     var offset = (direction === 'LEFT') ? -1 : 1;
 
-    if (validDirections[validDirections.indexOf(this.direction) + offset]) {
-      this.direction = validDirections[validDirections.indexOf(this.direction) + offset];
+    if (DIRECTIONS[DIRECTIONS.indexOf(this.direction) + offset]) {
+      this.direction = DIRECTIONS[DIRECTIONS.indexOf(this.direction) + offset];
     } else {
       // if offset is to the left, pick direction at previous index or loop back to the first element
-      this.direction = (offset === -1) ? validDirections[validDirections.length -1] : validDirections[0];
+      this.direction = (offset === -1) ? DIRECTIONS[DIRECTIONS.length -1] : DIRECTIONS[0];
     }
     
     return this.direction;
