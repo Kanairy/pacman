@@ -40,6 +40,14 @@ export default class Dialog {
         } else {
           return `PLACE Pacman first!`;
         }
+
+      case 'RIGHT':
+        if (this.grid.getState().placed) {
+          this.pacman.turn('RIGHT');
+          return true;
+        } else {
+          return `PLACE Pacman first!`;
+        }
         
       default:
         return `Ignored invalid command ${command}.`

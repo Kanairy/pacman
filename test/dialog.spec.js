@@ -64,4 +64,19 @@ describe('Dialog', () => {
     });
 
   });
+
+  describe('#command RIGHT', () => {
+    let dialog = new Dialog();
+
+    it('should reject a RIGHT command until Pacman is PLACE d', () => {
+      const expectedMessage = `PLACE Pacman first!`;
+      expect(dialog.command('RIGHT')).to.equal(expectedMessage);
+    });
+
+    it('should accept a RIGHT command after Pacman has been PLACE d', () => {
+      dialog.command('PLACE', 0, 0, 'NORTH');
+      expect(dialog.command('RIGHT')).to.be.true;
+    });
+
+  });
 });
