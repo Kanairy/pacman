@@ -6,7 +6,7 @@ This is a simulation of Pacman moving on a 5x5 grid.
 
 ### Installation
 
-You will need (nodejs)[https://nodejs.org/en/] installed to run this application.
+You will need [nodejs](https://nodejs.org/en/) installed to run this application.
 
 ### Usage
 
