@@ -35,8 +35,10 @@ REPORT - pacman will tell you where he is and where he is facing
 I took a test first approach to development (as can be seen in my commit history). I started with the Grid, followed by Pacman. I then implemented the Dialog class to handle the interface between the user and the simulation.
 
 
+-----------
+-----------
 
-```
+
 Code problem details:
 
 -----------
@@ -121,4 +123,3 @@ Output: 3,3,NORTH
 
 The source files, the test data and any test code.
 It is not required to provide any graphical output showing the movement of Pacman.
-```
