@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node --presets es2015 src/index.js",
-    "test": "node node_modules/.bin/mocha --compilers js:babel-register --recursive test/**/*.spec.js"
+    "test": "node node_modules/.bin/mocha --compilers js:babel-register --recursive test/**/*.spec.js",
+    "sample": "babel-node --presets es2015 src/index.js < SAMPLEINPUT.txt"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

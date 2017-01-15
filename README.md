@@ -4,16 +4,16 @@
 
 This is a simulation of Pacman moving on a 5x5 grid.
 
-## Usage
-
 ### Installation
 
 You will need (nodejs)[https://nodejs.org/en/] installed to run this application.
 
+### Usage
+
 run `npm install` in the project root directory.
 run `npm start` to begin interacting with the application.
+run `npm sample` to run Pacman through the SAMPLEINPUT.txt command list.
 run `npm test` to run tests.
-
 
 ### API
 
@@ -30,28 +30,13 @@ RIGHT - turn right
 REPORT - pacman will tell you where he is and where he is facing
 ``` 
 
-He is bright enough to not fall off the edges!
-
 ## Development Process
 
+I took a test first approach to development (as can be seen in my commit history). I started with the Grid, followed by Pacman. I then implemented the Dialog class to handle the interface between the user and the simulation.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 Code problem details:
 
 -----------
@@ -136,3 +121,4 @@ Output: 3,3,NORTH
 
 The source files, the test data and any test code.
 It is not required to provide any graphical output showing the movement of Pacman.
+```
