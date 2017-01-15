@@ -6,7 +6,7 @@ describe('Dialog', () => {
   describe('#command', () => {
     let dialog = new Dialog();
 
-    it('should have a "command" command', () => {
+    it('should have a command method', () => {
       expect(dialog.command()).to.not.be.undefined;
     });
 

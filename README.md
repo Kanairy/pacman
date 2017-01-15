@@ -1,4 +1,56 @@
-# Code-Challenge-1
+# Pacman
+
+## Description
+
+This is a simulation of Pacman moving on a 5x5 grid.
+
+## Usage
+
+### Installation
+
+You will need (nodejs)[https://nodejs.org/en/] installed to run this application.
+
+run `npm install` in the project root directory.
+run `npm start` to begin interacting with the application.
+run `npm test` to run tests.
+
+
+### API
+
+Pacman understands the following (case sensitive) commands:
+```
+PLACE X,Y,F - place Pacman on the grid at X,Y, and facing F, where F is NORTH,EAST,SOUTH or WEST.
+
+MOVE - take a step forward in the direction he is currently facing
+
+LEFT - turn left
+
+RIGHT - turn right
+
+REPORT - pacman will tell you where he is and where he is facing
+``` 
+
+He is bright enough to not fall off the edges!
+
+## Development Process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Code problem details:
 

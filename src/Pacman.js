@@ -41,6 +41,7 @@ export default class Pacman {
     if (this.direction === 'WEST') {
       return {x: -1, y: 0};
     }
+    return false;
   }
 
   getState() {
